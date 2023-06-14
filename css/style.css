@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+
+/* RESET */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/***********************************************/
+/* VARIABLES */
+/***********************************************/
+
+:root {
+  --clr-primary1: #2ab2af;
+  --clr-primary2: #c0df34;
+  --clr-secondary1: #e5eff5;
+  --clr-secondary2: #98a6bd;
+  --clr-bg-body: #dce9f2;
+  --clr-bg-card1: #fff;
+  --clr-bg-card2: #2bb3b1;
+  --clr-bg-card3: #4abebd;
+  --clr-special: #59eae7;
+
+  --ff-main: "Karla", sans-serif;
+
+  --fs-main: 16px;
+  --fs-heading: 1.2rem;
+
+  --btn-font-size: 1.2rem;
+
+  --border-radius: 10px;
+
+  --fw-regular: 400;
+  --fw-bold: 700;
+
+  --spacing-x-sml: 0.5rem;
+  --spacing-sml: 1rem;
+  --spacing-med: 1.25rem;
+  --spacing-lrg: 1.5rem;
+  --spacing-x-lrg: 2rem;
+  --spacing-xx-lrg: 3rem;
+}
+
+body {
+  background-color: var(--clr-bg-body);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  margin: var(--spacing-sml);
+  font-size: var(--fs-main);
+  max-width: 375px;
+}
+
+main,
+.btn {
+  font-family: var(--ff-main);
+}
+
+.btn {
+  font-size: var(--btn-font-size);
+}
+
+/* ALL 3 SECTIONS WIL HAVE THE SAME PADDING */
+
+.intro,
+.subscription,
+.whyUs {
+  padding: var(--spacing-x-lrg) var(--spacing-med);
+}
+
+/*********************** INTRO CARD */
+.intro {
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  background-color: var(--clr-bg-card1);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sml);
+}
+
+.intro__heading {
+  color: var(--clr-primary1);
+  font-size: var(--fs-heading);
+}
+
+.intro__guarantee {
+  color: var(--clr-primary2);
+}
+
+.intro__text {
+  line-height: var(--spacing-lrg);
+  color: var(--clr-secondary2);
+}
+
+/*********************** SUBSCRIPTION CARD */
+.subscription {
+  background-color: var(--clr-bg-card2);
+  display: flex;
+  flex-direction: column;
+  color: var(--clr-secondary1);
+}
+
+.subscription__heading {
+  color: var(--clr-secondary1);
+  font-size: var(--fs-heading);
+  margin-bottom: var(--spacing-med);
+}
+
+.subscription__cost {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: var(--spacing-x-sml);
+}
+
+.actual_cost {
+  font-size: 2rem;
+  font-weight: var(--fw-bold);
+}
+
+.terms {
+  color: var(--clr-special);
+}
+
+.subscription__btn {
+  background-color: var(--clr-primary2);
+  color: var(--clr-bg-card1);
+  padding: 0.9rem 0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: var(--spacing-x-lrg);
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15);
+}
+
+/*********************** WHYUS CARD */
+.whyUs {
+  background-color: var(--clr-bg-card3);
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+}
+
+.whyUs__heading {
+  color: var(--clr-secondary1);
+  font-size: var(--fs-heading);
+  margin-bottom: var(--spacing-med);
+}
+
+.whyUs ul {
+  list-style: none;
+}
+
+.whyUs ul li {
+  color: var(--clr-secondary1);
+  margin-bottom: 0.2rem;
+}
+
+/***********************************************/
+/* FRONTEND MENTOR SETTINGS */
+/***********************************************/
+/* .attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+} */
+
+/***********************************************/
+/* MEDIA QUIERIES */
+/***********************************************/
+
+@media (min-width: 500px) {
+  body {
+    height: 100vh;
+  }
+  main {
+    max-width: 40rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .intro,
+  .subscription,
+  .whyUs {
+    padding: var(--spacing-x-lrg) var(--spacing-xx-lrg);
+  }
+
+  .intro {
+    grid-column: span 2;
+  }
+
+  .subscription {
+    border-radius: 0 0 0 var(--border-radius);
+  }
+
+  .whyUs {
+    border-radius: 0 0 var(--border-radius) 0;
+  }
+}
